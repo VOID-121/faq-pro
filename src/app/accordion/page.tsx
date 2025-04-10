@@ -24,7 +24,7 @@ import {
               {[
                 "Where's my order?",
                 "Can I track my order?",
-                "How fast can I have my stickers?",
+                "How fast can Y have my stickers?",
                 "Order status",
                 "What was my order shipped in?",
                 "What happens if I provided an incorrect address?",
