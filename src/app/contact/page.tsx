@@ -1,7 +1,6 @@
 'use client';
 import React from "react";
 
-
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -40,6 +39,13 @@ const socialLinks = [
     label: "Send an Email",
     bg: "hover:bg-yellow-500",
   },
+];
+
+const formFields = [
+  { id: "name", label: "Name *", type: "text", required: true },
+  { id: "email", label: "Email *", type: "email", required: true },
+  { id: "order", label: "Order Number", type: "text", required: false },
+  { id: "message", label: "Message *", type: "textarea", required: true },
 ];
 
 export default function ContactPage() {
@@ -113,26 +119,28 @@ export default function ContactPage() {
       <div className="w-full max-w-[640px] px-2 py-2">
         <h3 className="text-[15px] font-semibold mb-6 text-gray-500">WE’LL TALK SOON.</h3>
         <form className="space-y-6" onSubmit={handleSubmit}>
-          <div className="w-full">
-            <Label htmlFor="name" className="block text-[#0d0606] font-bold text-base mb-[6px]">Name *</Label>
-            <Input id="name" required className="w-full sm:w-full sm:h-[48px] lg:w-[300px] lg:h-[37px] border border-gray-300 text-[#777] text-base px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300 rounded-none" />
-          </div>
-          <div className="w-full">
-            <Label htmlFor="email" className="block text-[#0d0606] font-bold text-base mb-[6px]">Email *</Label>
-            <Input id="email" type="email" required className="w-full sm:w-full sm:h-[48px] lg:w-[300px] lg:h-[37px] border border-gray-300 text-[#777] text-base px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300 rounded-none" />
-          </div>
-          <div className="w-full">
-            <Label htmlFor="order" className="block text-[#0d0606] font-bold text-base mb-[6px]">Order Number</Label>
-            <Input id="order" className="w-full sm:w-full sm:h-[48px] lg:w-[300px] lg:h-[37px] border border-gray-300 text-[#777] text-base px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300 rounded-none" />
+          {formFields.map(({ id, label, type, required }, index) => (
+            <div key={index} className="w-full">
+              <Label htmlFor={id} className="block text-[#0d0606] font-bold text-base mb-[6px]">
+                {label}
+              </Label>
+              {type === "textarea" ? (
+                <Textarea
+                  id={id}
+                  required={required}
+                  className="w-full sm:w-full sm:h-[160px] lg:h-[160px] lg:w-[580px] border border-gray-300 text-[#777] text-base px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300 rounded-none"
+                />
+              ) : (
+                <Input
+                  id={id}
+                  type={type}
+                  required={required}
+                  className="w-full sm:w-full sm:h-[48px] lg:w-[300px] lg:h-[37px] border border-gray-300 text-[#777] text-base px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300 rounded-none"
+                />
+              )}
+            </div>
+          ))}
 
-            <br></br> 
-            <p className="text-sm text-gray-500 mt-[3px]">If applicable.</p>
-          </div>
-          <div className="w-full">
-            <Label htmlFor="message" className="block text-[#0d0606] font-bold text-base mb-[6px]">Message *</Label>
-            <Textarea id="message" required className="w-full sm:w-full sm:h-[160px] lg:h-[160px] lg:w-[580px] border border-gray-300 text-[#777] text-base px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300 rounded-none" />
-          </div>
-          
           {/* CAPTCHA */}
           <div>
             <Label className="block text-[#0d0606] font-bold text-base mb-[6px]">CAPTCHA</Label>

@@ -426,23 +426,17 @@ export default function SupportPage() {
                         </>,
                         }, {
                             q: "Affirm / Financing",
-                            a: <>
-                                 
+                            a: <>         
                             <>
-                                <p className="italic font-medium  text-gray-500 mb-4">
-                                Your rate will be 0-36% APR based on credit, and is
+                                <p className="italic font-medium  text-gray-500 mb-4">  Your rate will be 0-36% APR based on credit, and is
 subject to an eligibility check. For example, a $700 purchase might
 cost $63.25/mo over 12 months at 15% APR. Payment options through
 Affirm are provided by these lending partners: affirm.com/lenders.
 Options depend on your purchase amount, and a down payment
 may be required.
                                 </p>
-                                
-                                
-                            </>
-                        
-                        </>,
-                        }].map(({ q, a }, i) => (
+    
+                            </></>, }].map(({ q, a }, i) => (
                             <AccordionItem value={`item-3-${i}`} key={i}>
                                 <AccordionTrigger className=" text-gray-500 text-xl font-medium transition-colors px-4 py-3 rounded-md group data-[state=open]:shadow-[0_2px_10px_rgba(0,0,0,0.1)] data-[state=open]:bg-gray-100 data-[state=open]:text-orange-500 hover:text-blue-500">
                                     {q}
@@ -465,3 +459,6 @@ may be required.
         </section>
     )
 }
+
+
+
