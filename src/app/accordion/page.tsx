@@ -4,6 +4,7 @@ import {
     AccordionItem,
     AccordionTrigger,
   } from "@/components/ui/accordion"
+  import Image from 'next/image';
   
   const unsupportedCountries = [
     "South Sudan",
@@ -140,7 +141,7 @@ import {
                     ))}
                     </ol>
                     <p className="italic font-medium text-gray-500 mb-4">
-                    If you're in any of these countries, you can use{" "}
+                    If you&#39;re in any of these countries, you can use{" "}
                     <a href="https://www.myus.com/" className="text-black font-medium hover:text-blue-600 no-underline">
                         MyUS
                     </a>{" "}
@@ -214,7 +215,7 @@ import {
                         are printed and cut to the exact shape of the design.
                     </p>
                     <p className="text-gray-500 font-semibold mb-2">Example of Die Cut Stickers:</p>
-                    <img src="/images/car.jpg" alt="Die Cut Sticker" className="w-full mb-6 rounded" />
+                    <Image src="/images/car.jpg" width={500} height={300} alt="Die Cut Sticker" className="w-full mb-6 rounded" />
                     <p className="text-gray-500 mb-2 font-medium">
                         <a
                         href="https://vinylstatus.com/product/transfer-stickers/"
@@ -232,7 +233,7 @@ import {
                         are made out of a <span className="font-bold">1 color</span>, 3.4mil thick durable vinyl. They are cut with precision and hand weeded. Since the material is dyed, it will never fade. Transfer stickers and vinyl lettering have no background and are fully weatherproof.
                     </p>
                     <p className="text-gray-500 font-semibold mb-2">Example of Transfer Stickers:</p>
-                    <img
+                    <Image width={500} height={300}
                         src="/images/VinylStatus_17859554–01ALT.jpg"
                         alt="Transfer Sticker"
                         className="w-full mb-6 rounded"

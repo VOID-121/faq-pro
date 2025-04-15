@@ -126,7 +126,7 @@ export default function TermsPage() {
               );
 
               if (section.title === 'Contact Information') {
-                const [firstLine, secondLine, cityLine, emailLine] = para.split('\n');
+                const [firstLine, secondLine, cityLine] = para.split('\n');
                 return (
                   <div key={i} className="text-gray-500 text-sm leading-[22px] font-semibold space-y-3">
                     <div>
